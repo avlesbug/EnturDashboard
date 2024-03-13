@@ -1,0 +1,96 @@
+body {
+    background-color: #222; /* Dark background color */
+    color: #fff; /* Text color */
+  }
+
+.bussboard-container {
+    width: 100%;
+    max-width: 600px;
+    margin: 0 auto;
+    padding: 20px;
+    background-color: #333;
+    color: #fff; /* Text color */
+    border-radius: 8px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  }
+  
+  .stop-header {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    gap: 3em;
+    font-size: 2em;
+    margin-bottom: 1em;
+  }
+  .stop-header button {
+    padding: 10px 20px;
+    margin-right: 10px;
+    border-radius: 0.2em;
+    border: none;
+    cursor: pointer;
+  }
+
+  .active {
+    background-color: #CAF0F8;
+  }
+
+  .inactive {
+    background-color: #444;
+  }
+
+  .stop-header > :first-child {
+    margin-right: auto; /* Pushes the first child to the left */
+  }
+  
+  .stop-header > :last-child {
+    width: 100%; /* Expands the second child to fill the remaining space */
+    text-align: right; /* Aligns the content of the second child to the right */
+  }
+  
+  .route-info-container {
+    display: grid;
+    grid-gap: 10px;
+  }
+  
+  .route-info {
+    background-color: #444;
+    border-radius: 8px;
+    padding: 10px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  }
+
+  .route-info-header {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    font-size: 1.5em;
+    font-weight: 600;
+    gap: 0.8em;
+    border-radius: 0.4em;
+    padding: 0.4em;
+    color: #333;
+  }
+
+  .tram {
+    background-image: linear-gradient(90deg, #CAF0F8 0% ,#CAF0F8 20%, #444 98%);
+  }
+
+  .bus {
+    background-image: linear-gradient(90deg, #da344d 0% , #da344d 20% , #444 98%);
+  }
+
+  .route-info-body {
+    display: flex;
+    flex-direction: column;
+    font-size: 1.4em;
+    color: #ccc; /* Lighter text color */
+    padding: 0.6em;
+    gap: 0.3em;
+  }
+
+  .loading-bar {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+  
