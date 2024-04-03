@@ -1,6 +1,57 @@
 body {
-    background-color: #222; /* Dark background color */
-    color: #fff; /* Text color */
+    background-color: #222;
+    color: #fff;
+  }
+
+  .centered-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100vw;
+    height: 100svh;
+  }
+  
+
+  .favorites-container{
+    width: 42rem;
+    padding: 1em;
+    background-color: #333;
+    color: #fff;
+    border-radius: 0.6em;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  }
+
+  .favorites-list{
+    display: flex;
+    flex-direction: column;
+    gap: 0.4em;
+    font-size: 2em;
+    font-weight: bold;
+    color: #fff;
+  }
+  .link-container {
+    background-color: #444;
+    border-radius: 0.4em;
+    padding: 0.4em;
+    margin-bottom: 0.2em;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+
+  .link-container:hover {
+    background-color: #525252;
+  }
+  
+  .link {
+    color: #fff;
+    text-decoration: none;
+    text-align: center;
+  }
+  
+  .link:hover {
+    text-decoration: none;
   }
 
 .bussboard-container {
@@ -39,12 +90,12 @@ body {
   }
 
   .stop-header > :first-child {
-    margin-right: auto; /* Pushes the first child to the left */
+    margin-right: auto;
   }
   
   .stop-header > :last-child {
-    width: 100%; /* Expands the second child to fill the remaining space */
-    text-align: right; /* Aligns the content of the second child to the right */
+    width: 100%;
+    text-align: right;
   }
   
   .route-info-container {
@@ -84,7 +135,7 @@ body {
     flex-direction: column;
     font-size: 1.2em;
     font-weight: bold;
-    color: #ccc; /* Lighter text color */
+    color: #ccc;
     padding: 0.4em;
     gap: 0.15em;
   }

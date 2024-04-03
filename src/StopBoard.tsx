@@ -33,7 +33,9 @@ export const StopBoard = (props: Props) => {
           </div>
           <div className="route-info-container">
             {routesInFourMinutes.map((item, index) => (
-              <RouteCard routeName={item.destinationDisplay.frontText} routeNumber={item.serviceJourney.line.publicCode} expectedDepartureTime={item.expectedDepartureTime}/>
+              <RouteCard routeName={item.destinationDisplay.frontText}
+              routeNumber={item.serviceJourney.line.publicCode}
+              expectedDepartureTime={item.expectedDepartureTime}/>
               ))}
               </div>
         </div>

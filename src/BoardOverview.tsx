@@ -3,6 +3,7 @@ import { StopBoard } from "./StopBoard"
 import axios from "axios";
 import { RouteResponse } from "./types";
 import { Bars } from 'react-loader-spinner'
+import { useParams } from "react-router-dom";
 
 export interface TransportMode {
     bus: boolean;
@@ -15,7 +16,15 @@ export enum ToggleOption {
     BEGGE
   }
 
-export const BoardOverview = () => {
+  interface Props {
+    busStopId: string
+  }
+
+export const BoardOverview = (props: Props) => {
+
+    const params = useParams<{busStopId: string}>();
+
+    const busStopId = params.busStopId;
 
     const [routeInfo, setRouteInfo] = useState<RouteResponse>();
 
@@ -26,8 +35,7 @@ export const BoardOverview = () => {
     const changeTransportMode = (transportMode: ToggleOption) => {
         setToggleOption(transportMode);
     }
-
-
+    
     useEffect(() => {
 
     const modes = [];
@@ -40,8 +48,7 @@ export const BoardOverview = () => {
           modes.push('tram');
       }
 
-      const query = `{
-        stopPlace(id: "NSR:StopPlace:58367") {
+      const query =`{stopPlace(id: "NSR:StopPlace:${props.busStopId}"){
             name
             id
             estimatedCalls(numberOfDepartures: 20, whiteListedModes: [${modes.join(',')}]) {
@@ -59,6 +66,8 @@ export const BoardOverview = () => {
             }
         }
         }`;
+
+        console.log(query)
 
         const getBussInfo = () => {
             axios
@@ -84,12 +93,12 @@ export const BoardOverview = () => {
 
     getBussInfo();
 
-    // Fetch data every 30 seconds
+    // Fetch data every 5 seconds
     const intervalId = setInterval(getBussInfo, 5000);
 
     // Cleanup function
     return () => clearInterval(intervalId);
-  }, [toggleOption]);
+  }, [toggleOption,params]);
 
     return (
         <div className="bussboard-container">
